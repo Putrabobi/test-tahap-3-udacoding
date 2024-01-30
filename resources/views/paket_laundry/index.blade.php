@@ -125,56 +125,56 @@
                                 </div>
 
 
-                              <!-- Confirm Delete Modal -->
-                              <div class="modal fade" id="confirmDeleteModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <h4 class="modal-title" id="confirmDeleteModalLabel">Yakin Hapus</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Yakin hapus data ini?</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <form action="{{ route('paket.destroy', $item->id) }}" method="POST" style="display: inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <!-- Confirm Delete Modal -->
+                                <div class="modal fade" id="confirmDeleteModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <h4 class="modal-title" id="confirmDeleteModalLabel">Yakin Hapus</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Yakin hapus data ini?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form action="{{ route('paket.destroy', $item->id) }}" method="POST" style="display: inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                              </div>
 
-                              <!-- Status Change Modal -->
-                              <div class="modal fade" id="statusChangeModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="statusChangeModalLabel">
-                                  <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                  <span aria-hidden="true">&times;</span>
-                                              </button>
-                                              <h4 class="modal-title" id="statusChangeModalLabel">Change Status</h4>
-                                          </div>
-                                          <div class="modal-body">
-                                              <p>Change status from {{ $item->status }} to {{ $item->status == 'Aktif' ? 'Nonaktif' : 'Aktif' }}?</p>
-                                          </div>
-                                          <div class="modal-footer">
-                                              <form action="{{ route('paket.changeStatus', $item->id) }}" method="POST" style="display: inline;">
-                                                  @csrf
-                                                  @method('PUT')
-                                                  <input type="hidden" name="status" value="{{ $item->status == 'Aktif' ? 'Nonaktif' : 'Aktif' }}">
-                                                  <button type="submit" class="btn btn-primary">Change Status</button>
-                                              </form>
-                                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                                <!-- Status Change Modal -->
+                                <div class="modal fade" id="statusChangeModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="statusChangeModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <h4 class="modal-title" id="statusChangeModalLabel">Change Status</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Change status from {{ $item->status }} to {{ $item->status == 'Aktif' ? 'Nonaktif' : 'Aktif' }}?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form action="{{ route('paket.changeStatus', $item->id) }}" method="POST" style="display: inline;">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <input type="hidden" name="status" value="{{ $item->status == 'Aktif' ? 'Nonaktif' : 'Aktif' }}">
+                                                    <button type="submit" class="btn btn-primary">Change Status</button>
+                                                </form>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 @endforeach
                             </tbody>

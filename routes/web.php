@@ -23,7 +23,6 @@ Route::controller(SatuanController::class)
     ->prefix('satuan')
     ->group(function(){
         Route::get('/', 'index')->name('satuan');
-        Route::get('create', 'create')->name('satuan.create');
         Route::post('store', 'store')->name('satuan.store');
         Route::put('edit/{id}', 'update')->name('satuan.update');
         Route::put('changeStatus/{id}', 'changeStatus')->name('satuan.changeStatus');
@@ -34,7 +33,6 @@ Route::controller(PaketLaundryController::class)
     ->prefix('paket-laundry')
     ->group(function(){
         Route::get('/', 'index')->name('paket');
-        Route::get('create', 'create')->name('paket.create');
         Route::post('store', 'store')->name('paket.store');
         Route::put('edit/{id}', 'update')->name('paket.update');
         Route::put('changeStatus/{id}', 'changeStatus')->name('paket.changeStatus');
